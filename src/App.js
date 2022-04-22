@@ -15,20 +15,20 @@ const App = () => {
         <Layout>
             <div className="routes">
               <Routes>
-                  <Route path="/">
-                      <Homepage />
+                  <Route exact path="/" element={<Homepage/>}>
+                      
                   </Route>
-                  <Route exact path="/exchanges">
-                      <Exchanges />
+                  <Route exact path="/exchanges" element={<Exchanges/>}>
+                      
                   </Route>
-                  <Route exact path="/cryptocurrencies">
-                      <Cryptocurrencies />
+                  <Route exact path="/cryptocurrencies" element={<Cryptocurrencies/>}>
+                      
                   </Route>
-                  <Route exact path="/crypto/:coinId">
-                      <CryptoDetails />
+                  <Route exact path="/crypto/:coinId" element={<CryptoDetails />}>
+                      
                   </Route>
-                  <Route exact path="/news">
-                      <News />
+                  <Route exact path="/news" element={<News/>}>
+                      
                   </Route>
               </Routes>
             </div>
