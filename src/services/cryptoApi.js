@@ -28,7 +28,7 @@ export const {
 //     url: 'https://coinranking1.p.rapidapi.com/exchanges',
 //     headers: {
 //       'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com',
-//       'X-RapidAPI-Key': 'KJwZZIJSFimshuivMSVGaiYzkRomp15f2vKjsnK4bKzuUzVLzA'
+//       'X-RapidAPI-Key': ''
 //     }
 //   };
 
