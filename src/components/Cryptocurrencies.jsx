@@ -41,9 +41,9 @@ const Cryptocurrencies = ({ simplified }) => {
           {cryptos?.map((currency) => (
             // xs: How much width the column will take on extra small devices
             // max: 24
-            <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.id}>
+            <Col xs={24} sm={12} lg={6} className="crypto-card" key={currency.uuid}>
                 {/* entire card is going to be link */}
-                <Link to={`/crypto/${currency.id}`}>
+                <Link to={`/crypto/${currency.uuid}`}>
                   <Card title={`${currency.rank}. ${currency.name}`}
                     extra={<img className="crypto-image" src={currency.iconUrl}/>}
                     hoverable
