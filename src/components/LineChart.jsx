@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import { Line } from "react-chartjs-2";
-import { Chart, registerables } from 'chart.js';
-import { Col, Row, Typography } from 'antd';
+import { Chart, registerables } from "chart.js";
+import { Col, Row, Typography } from "antd";
 
 const { Title } = Typography;
 Chart.register(...registerables);
@@ -33,8 +33,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
 
   const options = {
     scales: {
-      y:
-        {
+      y:{
           ticks: {
             beginAtZero: true,
           },

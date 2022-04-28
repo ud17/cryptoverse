@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import HTMLReactParser from "html-react-parser";
 import millify from "millify";
 import { useParams } from "react-router-dom";
-import { Col, Row, Typography, Select } from "antd";
+import { Col, Row, Typography } from "antd";
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
 
 import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from "../services/cryptoApi";
 import LineChart from "./LineChart";
 
 const { Text, Title } = Typography;
-const { Option } = Select;
+//const { Option } = Select;
 
 const CryptoDetails = () => {
   const { coinId } = useParams();
@@ -50,20 +50,24 @@ const CryptoDetails = () => {
             View value statistics, market cap and supply.
           </p>
         </Col>
-        <Select defaultValue="7d" className="select-timeperiod" placeholder="Select Time Period..."
-          onChange={(value) => setTimePeriod(value)}>
+        <select style={{height: "30px", borderRadius: "25px", 
+          padding:"2px 10px 2px 10px" ,border: "1px solid rgba(30, 81, 123, .5)", 
+          color:"Highlight", background:"transparent", appearance:"none"}} 
+          defaultValue="7d" 
+          className="select-timeperiod" placeholder="Select Time Period..."
+          onChange={(e) => setTimePeriod(e.target.value)}>
             {time.map((date)=> (
-                <Option key={date}>{date}</Option>
+                <option key={date}>{date}</option>
               ))
             }
-        </Select>
+        </select>
         <LineChart coinHistory={coinHistory} currentPrice={millify(cryptoDetails?.price)} coinName={cryptoDetails?.name} />
         <Col className="stats-container">
           <Col className="coin-value-statistics">
             <Col className="coin-value-statistics-value">
-              <Title level={3} className="coin-details-heading">
+              <div level={3} className="coin-details-heading">
                   {cryptoDetails?.name} value statistics.
-              </Title>
+              </div>
               <p>
                 An overview showing the stats of {cryptoDetails?.name}
               </p>
@@ -81,9 +85,9 @@ const CryptoDetails = () => {
           </Col>
           <Col className="other-stats-info">
             <Col className="coin-value-statistics-value">
-              <Title level={3} className="coin-details-heading">
+              <div level={3} className="coin-details-heading">
                   Other Statistics
-              </Title>
+              </div>
               <p>
                 An overview showing stats of all cryptocurrencies.
               </p>
@@ -102,17 +106,17 @@ const CryptoDetails = () => {
         </Col>
         <Col className="coin-desc-link">
           <Row className="coin-desc">
-            <Title level={3} className="coin-details-heading">
+            <div level={3} className="coin-details-heading">
               What is {cryptoDetails?.name}?
               {cryptoDetails && HTMLReactParser(cryptoDetails?.description)}
-            </Title>
+            </div>
           </Row>
           <Col className="coin-links">
-            <Title level={3} className="coin-details-heading">
+            <div level={3} className="coin-details-heading">
               {cryptoDetails?.name} Links
-            </Title>
-            {cryptoDetails?.links.map((link) => (
-              <Row className="coin-link" key={link.name}>
+            </div>
+            {cryptoDetails?.links.map((link, index) => (
+              <Row className="coin-link" key={index}>
                 <Title level={5} className="link-name">
                   {link.type}
                 </Title>
