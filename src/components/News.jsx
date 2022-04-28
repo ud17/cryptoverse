@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Select, Row, Col, Avatar, Typography, Card, Input } from "antd";
+import { Select, Row, Col, Avatar, Typography, Card } from "antd";
 import moment from "moment";
 
 import { useGetCryptosNewsQuery } from "../services/cryptoNewsApi";
