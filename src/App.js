@@ -40,7 +40,6 @@ const App = () => {
           </Typography.Title>
           <Space>
             <Link to="/"/>
-            <Link to="/exchanges">Exchanges</Link>
             <Link to="/news">News</Link>
           </Space>
         </div>
