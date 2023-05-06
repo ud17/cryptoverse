@@ -1,4 +1,7 @@
 # Cryptoverse React Application
 
 ## Realtime Cryptocurrencies Analysis
-Project Link - https://cryptoverse-udit.netlify.app/
+
+[Live](https://cryptoverse-udit.netlify.app/)
+
+![dashboard](./public/images/dashboard.png)
